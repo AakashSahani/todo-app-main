@@ -1,7 +1,16 @@
 import React from 'react';
+import Todo from './Todo';
 
-function Tasklist() {
-	return <div>Tasklist</div>;
+function TodoList({ todolist, setTodolist }) {
+	return (
+		<ul className="todo-list">
+			{todolist.map((todo) => (
+				<li key={todo.id}>
+					<Todo text={todo.text} />
+				</li>
+			))}
+		</ul>
+	);
 }
 
-export default Tasklist;
+export default TodoList;

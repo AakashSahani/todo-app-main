@@ -1,15 +1,32 @@
 import React from 'react';
+import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './Todo.css';
 
-function TodoInput() {
+function TodoInput({ todolist, setTodolist }) {
+	const [todo, setTodo] = useState('');
+	const handleChange = (e) => {
+		setTodo(e.currentTarget.value);
+	};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setTodolist((todolist) => [...todolist, { id: uuidv4(), text: todo }]);
+		setTodo('');
+	};
+
 	return (
-		<form>
+		<form onSubmit={handleSubmit}>
 			<ul>
 				<li>
 					<label htmlFor="complete" hidden>
 						Is task completed?
 					</label>
-					<input type="checkbox" name="complete" id="complete" />
+					<input
+						type="checkbox"
+						name="complete"
+						id="complete"
+						onChange={handleSubmit}
+					/>
 				</li>
 				<li>
 					<label htmlFor="todo" hidden>
@@ -19,11 +36,10 @@ function TodoInput() {
 						type="text"
 						name="todo"
 						id="todo"
-						placeholder="Create a new todo..."
+						value={todo}
+						placeholder="Add a todo..."
+						onChange={handleChange}
 					/>
-				</li>
-				<li>
-					<button type="submit">Add Todo</button>
 				</li>
 			</ul>
 		</form>
