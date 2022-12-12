@@ -22,7 +22,7 @@ function Todo({ text }) {
 							onChange={handleChange}
 						/>
 					</li>
-					<li className={complete && 'complete'}>
+					<li className={complete ? 'complete' : ''}>
 						<p className="todo-text">{text}</p>
 					</li>
 				</ul>

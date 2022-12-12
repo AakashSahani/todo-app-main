@@ -1,5 +1,6 @@
 import React from 'react';
 import Todo from './Todo';
+import TodoState from './TodoState';
 
 function TodoList({ todolist, setTodolist }) {
 	return (
@@ -9,6 +10,9 @@ function TodoList({ todolist, setTodolist }) {
 					<Todo text={todo.text} />
 				</li>
 			))}
+			<li>
+				<TodoState todolist={todolist} setTodolist={setTodolist} />
+			</li>
 		</ul>
 	);
 }

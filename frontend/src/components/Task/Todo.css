@@ -44,3 +44,15 @@ form ul li:first-child input {
 .complete {
 	text-decoration: line-through;
 }
+
+.todo-state {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 0.5rem;
+}
+
+.todo-state ul {
+	display: flex;
+	list-style: none;
+}
