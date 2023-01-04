@@ -3,14 +3,18 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import './Todo.css';
 
-function TodoInput({ todolist, setTodolist }) {
+function TodoInput({ todolist, setTodolist, filterlist, setFilterlist }) {
 	const [todo, setTodo] = useState('');
 	const handleChange = (e) => {
 		setTodo(e.currentTarget.value);
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setTodolist((todolist) => [...todolist, { id: uuidv4(), text: todo }]);
+		setTodolist((todolist) => [
+			...todolist,
+			{ id: uuidv4(), text: todo, isComplete: false },
+		]);
+		setFilterlist([...todolist]);
 		setTodo('');
 	};
 

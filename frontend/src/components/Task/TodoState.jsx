@@ -1,24 +1,45 @@
 import React from 'react';
 
-function TodoState({ todolist, setTodolist }) {
-	const handleClick = () => {
-		console.log('Hello world');
+function TodoState({ todolist, setTodolist, filterlist, setFilterlist }) {
+	const filterTask = (action) => {
+		switch (action) {
+			case 'ALL':
+				setFilterlist([...todolist]);
+				console.log('This is todolist', todolist);
+				console.log('This is filterlist', filterlist);
+				break;
+			case 'ACTIVE':
+				setFilterlist((todolist) => [
+					...todolist.filter((list) => list.isComplete != true),
+				]);
+				break;
+			case 'COMPLETE':
+				setFilterlist((todolist) => [
+					...todolist.filter((list) => list.isComplete === true),
+				]);
+				break;
+			case 'CLEAR':
+				setTodolist([]);
+				break;
+			default:
+				break;
+		}
 	};
 	return (
 		<div className="todo-state">
 			<p>{todolist.length} items left</p>
 			<ul>
 				<li>
-					<button onClick={handleClick}>All</button>
+					<button onClick={() => filterTask('ALL')}>All</button>
 				</li>
 				<li>
-					<button onClick={handleClick}>Active</button>
+					<button onClick={() => filterTask('ACTIVE')}>Active</button>
 				</li>
 				<li>
-					<button onClick={handleClick}>Completed</button>
+					<button onClick={() => filterTask('COMPLETE')}>Completed</button>
 				</li>
 			</ul>
-			<button onClick={handleClick}>Clear Completed</button>
+			<button onClick={() => filterTask('CLEAR')}>Clear Completed</button>
 		</div>
 	);
 }

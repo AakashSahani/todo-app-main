@@ -1,11 +1,12 @@
 import React from 'react';
-import { useState } from 'react';
 import './Todo.css';
 
-function Todo({ text }) {
-	const [complete, setComplete] = useState(false);
+function Todo({ todolist, setTodolist, todo }) {
 	const handleChange = () => {
-		setComplete((complete) => !complete);
+		const myNewTodo = [...todolist];
+		const myTodo = myNewTodo.find((td) => td.id === todo.id);
+		myTodo.isComplete = myTodo.isComplete ? false : true;
+		setTodolist(myNewTodo);
 	};
 	return (
 		<>
@@ -22,8 +23,8 @@ function Todo({ text }) {
 							onChange={handleChange}
 						/>
 					</li>
-					<li className={complete ? 'complete' : ''}>
-						<p className="todo-text">{text}</p>
+					<li className={todo.isComplete === true ? 'complete' : ''}>
+						<p className="todo-text">{todo.text}</p>
 					</li>
 				</ul>
 			</form>

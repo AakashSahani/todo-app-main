@@ -2,16 +2,21 @@ import React from 'react';
 import Todo from './Todo';
 import TodoState from './TodoState';
 
-function TodoList({ todolist, setTodolist }) {
+function TodoList({ todolist, setTodolist, filterlist, setFilterlist }) {
 	return (
 		<ul className="todo-list">
-			{todolist.map((todo) => (
+			{filterlist.map((todo) => (
 				<li key={todo.id}>
-					<Todo text={todo.text} />
+					<Todo todolist={todolist} setTodolist={setTodolist} todo={todo} />
 				</li>
 			))}
 			<li>
-				<TodoState todolist={todolist} setTodolist={setTodolist} />
+				<TodoState
+					todolist={todolist}
+					setTodolist={setTodolist}
+					filterlist={filterlist}
+					setFilterlist={setFilterlist}
+				/>
 			</li>
 		</ul>
 	);
