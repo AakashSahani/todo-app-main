@@ -27,7 +27,9 @@ function TodoState({ todolist, setTodolist, filterlist, setFilterlist }) {
 	};
 	return (
 		<div className="todo-state">
-			<p>{todolist.length} items left</p>
+			<p>
+				{todolist.filter((list) => list.isComplete != true).length} items left
+			</p>
 			<ul>
 				<li>
 					<button onClick={() => filterTask('ALL')}>All</button>

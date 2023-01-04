@@ -6,6 +6,7 @@
 form {
 	height: 50px;
 	margin: 1rem 0;
+	font-size: 1.2rem;
 }
 
 form ul {
@@ -55,4 +56,13 @@ form ul li:first-child input {
 .todo-state ul {
 	display: flex;
 	list-style: none;
+}
+
+@media (max-width: 501px) {
+	.todo-state {
+		flex-direction: column;
+	}
+	.todo-state ul li {
+		margin: 0.5rem 0;
+	}
 }

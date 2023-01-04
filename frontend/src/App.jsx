@@ -11,7 +11,7 @@ function App() {
 		setFilterlist(todolist);
 	}, [todolist]);
 	return (
-		<div className="App">
+		<>
 			<Header />
 			<TodoInput
 				todolist={todolist}
@@ -25,7 +25,7 @@ function App() {
 				filterlist={filterlist}
 				setFilterlist={setFilterlist}
 			/>
-		</div>
+		</>
 	);
 }
 

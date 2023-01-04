@@ -10,14 +10,18 @@ function TodoList({ todolist, setTodolist, filterlist, setFilterlist }) {
 					<Todo todolist={todolist} setTodolist={setTodolist} todo={todo} />
 				</li>
 			))}
-			<li>
-				<TodoState
-					todolist={todolist}
-					setTodolist={setTodolist}
-					filterlist={filterlist}
-					setFilterlist={setFilterlist}
-				/>
-			</li>
+			{todolist.length != 0 ? (
+				<li>
+					<TodoState
+						todolist={todolist}
+						setTodolist={setTodolist}
+						filterlist={filterlist}
+						setFilterlist={setFilterlist}
+					/>
+				</li>
+			) : (
+				<li></li>
+			)}
 		</ul>
 	);
 }

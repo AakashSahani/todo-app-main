@@ -25,12 +25,6 @@ function TodoInput({ todolist, setTodolist, filterlist, setFilterlist }) {
 					<label htmlFor="complete" hidden>
 						Is task completed?
 					</label>
-					<input
-						type="checkbox"
-						name="complete"
-						id="complete"
-						onChange={handleSubmit}
-					/>
 				</li>
 				<li>
 					<label htmlFor="todo" hidden>
@@ -44,6 +38,11 @@ function TodoInput({ todolist, setTodolist, filterlist, setFilterlist }) {
 						placeholder="Add a todo..."
 						onChange={handleChange}
 					/>
+				</li>
+				<li>
+					<button type="submit" onSubmit={handleSubmit}>
+						Add task
+					</button>
 				</li>
 			</ul>
 		</form>
