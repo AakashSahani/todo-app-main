@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import './Header.css';
 import sun from '../../assets/images/icon-sun.svg';
 import moon from '../../assets/images/icon-moon.svg';
 

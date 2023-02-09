@@ -1,7 +1,6 @@
 import Header from './components/Header/Header';
 import TodoInput from './components/Task/TodoInput';
 import TodoList from './components/Task/Todolist';
-import './App.css';
 import { useEffect, useState } from 'react';
 
 function App() {

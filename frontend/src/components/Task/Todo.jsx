@@ -1,5 +1,4 @@
 import React from 'react';
-import './Todo.css';
 
 function Todo({ todolist, setTodolist, todo }) {
 	const handleChange = () => {
