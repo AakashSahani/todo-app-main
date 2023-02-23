@@ -4,7 +4,7 @@ import TodoState from './TodoState';
 
 function TodoList({ todolist, setTodolist, filterlist, setFilterlist }) {
 	return (
-		<ul className="todo-list">
+		<ul>
 			{filterlist.map((todo) => (
 				<li key={todo.id}>
 					<Todo todolist={todolist} setTodolist={setTodolist} todo={todo} />

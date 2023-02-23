@@ -10,7 +10,7 @@ function Todo({ todolist, setTodolist, todo }) {
 	return (
 		<>
 			<form>
-				<ul>
+				<ul className="card">
 					<li>
 						<label htmlFor="complete" hidden>
 							Is task completed?
@@ -24,6 +24,9 @@ function Todo({ todolist, setTodolist, todo }) {
 					</li>
 					<li className={todo.isComplete === true ? 'complete' : ''}>
 						<p className="todo-text">{todo.text}</p>
+					</li>
+					<li className="ml-auto">
+						<span>X</span>
 					</li>
 				</ul>
 			</form>

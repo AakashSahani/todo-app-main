@@ -11,8 +11,7 @@ function App() {
 	}, [todolist]);
 	return (
 		<>
-			<Header />
-			<TodoInput
+			<Header
 				todolist={todolist}
 				setTodolist={setTodolist}
 				filterlist={filterlist}

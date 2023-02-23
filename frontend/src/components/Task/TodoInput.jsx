@@ -18,8 +18,8 @@ function TodoInput({ todolist, setTodolist, filterlist, setFilterlist }) {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<ul>
+		<form onSubmit={handleSubmit} className="w-full">
+			<ul className="flex flex-row-reverse bg-black p-2 rounded-md  items-center justify-between">
 				<li>
 					<label htmlFor="complete" hidden>
 						Is task completed?
@@ -36,10 +36,15 @@ function TodoInput({ todolist, setTodolist, filterlist, setFilterlist }) {
 						value={todo}
 						placeholder="Add a todo..."
 						onChange={handleChange}
+						className="h-10 flex-1"
 					/>
 				</li>
 				<li>
-					<button type="submit" onSubmit={handleSubmit}>
+					<button
+						type="submit"
+						className="border p-1 rounded-lg"
+						onSubmit={handleSubmit}
+					>
 						Add task
 					</button>
 				</li>
